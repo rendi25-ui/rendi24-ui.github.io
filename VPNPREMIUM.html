@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Sekarang - VPN Premium</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rg;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 5px solid #ff6f61;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            margin: 10px 0 0;
+            font-weight: 300;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], select, input[type="date"], button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus, select:focus, input[type="date"]:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff6f61, #ff3b3f);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 111, 97, 0.4);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        .payment-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .qris-image {
+            max-width: 250px;
+            width: 100%;
+            display: block;
+            margin: 20px auto;
+            border: 5px solid #f0f0f0;
+            border-radius: 15px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .qris-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .toggle-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VPN PREMIUM</h1>
+        <p>Aman, Murah, & Terpercaya</p>
+    </header>
+    <div class="content">
+        <form id="orderForm">
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="👤 Masukkan username Anda" required>
+            </div>
+            <div class="form-container">
+                <select id="protocol" name="protocol" required>
+                    <option value="">📡PILIH PROTOCOL</option>
+                    <option value="SSH WS SSL UDP">SSH WS SSL UDP</option>
+                    <option value="VMESS WS GRPC">VMESS WS GRPC</option>
+                    <option value="VLESS WS GRPC">VLESS WS GRPC</option>
+                    <option value="TROJAN WS GRPC">TROJAN WS GRPC</option>
+                </select>
+            </div>
+            <div class="form-container">
+                <select id="server" name="server" required>
+                    <option value="">🌐PILIH SERVER</option>
+                    <optgroup label="Server Indonesia">
+                        <option value="ID CLOUD">🇮🇩 ID CLOUD - Rp10.000</option>
+                        <option value="ID WARNA">🇮🇩 ID WARNA - Rp15.000</option>
+                        <option value="ID IKD">🇮🇩 ID IKD - Rp15.000</option>
+                        <option value="ID DEWAWEB">🇮🇩 ID DEWAWEB - Rp15.000</option>
+                        <option value="ID NUSA">🇮🇩 ID NUSA - Rp15.000</option>
+                    </optgroup>
+                    <optgroup label="Server Singapura">
+                        <option value="SG DO">🇸🇬 SG DO - Rp10.000</option>
+                        <option value="SG POINT">🇸🇬 SG POINT - Rp15.000</option>
+                        <option value="SG LEASEWEB">🇸🇬 SG LEASEWEB - Rp15.000</option>
+                        <option value="SG BAGE">🇸🇬 SG BAGE - Rp17.000</option>
+                        <option value="SG DATACAMP / OVH">🇸🇬 SG DATACAMP - Rp17.000</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="form-input">
+                <select id="payment" name="payment" required onchange="toggleQRIS()">
+                    <option value="">💳PILIH PEMBAYARAN --</option>
+                    <option value="QRIS">💳QRIS</option>
+                </select>
+            </div>
+            <div id="qrisInfo" class="payment-info" style="display: none;">
+                <p><strong>Scan QRIS untuk Pembayaran:</strong></p>
+                <img class="qris-image" alt="QRIS QR Code" src="https://tools.kobostore.my.id/uploads/renzx/8222011677.jpg">
+                <p><strong>Setelah melakukan pembayaran, mohon untuk segera melaporkan Bukti transaksi ke Admin.</strong></p>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="sendToWhatsApp()">Pesan Sekarang</button>
+                <button class="toggle-button" onclick="showServerRules()">SERVER RULES</button>
+            </div>
+        </form>
+    </div>
+    <!-- Footer -->
+    <footer>
+        Powered By RenzStore<br>
+        Sudah Dipercaya Lebih Dari 1500+ Pelanggan</a>
+    </footer>
+
+    <script>
+        function toggleQRIS() {
+            const paymentMethod = document.getElementById('payment').value;
+            const qrisInfo = document.getElementById('qrisInfo');
+            if (paymentMethod === "QRIS") {
+                qrisInfo.style.display = 'block';
+            } else {
+                qrisInfo.style.display = 'none';
+            }
+        }
+
+        function sendToWhatsApp() {
+            const username = document.getElementById('username').value;
+            const protocol = document.getElementById('protocol').value;
+            const server = document.getElementById('server').value;
+            const payment = document.getElementById('payment').value;
+
+            if (!username || !protocol || !server || !payment) {
+                alert('Harap lengkapi semua kolom sebelum melanjutkan.');
+                return;
+            }
+
+            const message = `Halo, saya ingin memesan VPN Premium dengan detail berikut:\n\n` +
+                           `*Username:* ${username}\n` +
+                           `*Protocol:* ${protocol}\n` +
+                           `*Server:* ${server}\n` +
+                           `*Metode Pembayaran:* ${payment}\n\n` +
+                           `Kirim Bukti Pembayaran !!`;
+
+            const phoneNumber = "6287820629242"; // Ganti dengan nomor WhatsApp Anda
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function showServerRules() {
+            const rules = `
+📍 Max Login : 2 Device
+📍 STB/OpenWrt : Diperbolehkan
+📍 Garansi Pastinya
+📍 Bisa Dibuatkan Config Jika Dibutuhkan
+📍 Sudah Support Trik Metode Wilcard
+📍 Jaminan UpTime Server 99%
+📍 Koneksi Cepat & Stabil
+📍 Kenyamanan Pelanggan Adalah Prioritas Kami
+            `;
+            alert("Aturan Server:\n\n" + rules);
+        }
+    </script>
+</body>
+</html>
